@@ -4,30 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <script src="contact.js"></script>
 </head>
 <body>
-    <div id="navigation-bar">
+    <div>
 	    <ul id="navigation">
-		    <li><a href="home.html">Home</a></li>
-		    <li><a href="offers.html">Offers</a></li>
-		    <li><a href="collections.html">Collections</a></li>
-		    <li><a href="contact.html">Contact</a></li>
+		    <li><a href="index.html">Home</a></li>
+		    <li><a href="offers.html">Angebote</a></li>
+		    <li><a href="collections.html">Aktienkurse</a></li>
+		    <li><a href="contact.html">Kontakte</a></li>
 	    </ul>
     </div>
 
-    <div id="main">
-        
+    <form id="myForm3">
+        <div id="myForm">
+        <div class="myForm1">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="adresse">Adresse:</label><br>
+        <input type="text" id="adresse" name="adresse"><br><br>
+
+        <label for="alter">Alter:</label><br>
+        <input type="number" id="alter" name="alter"><br><br>
+        </div>
+
+        <div class="myForm2"> 
+        <label for="mail">Mail:</label><br>
+        <input type="text" id="mail" name="mail"><br><br>
+
+        <label for="telefonnr">Telefonnr:</label><br>
+        <input type="number" id="Telefonnr" name="telefonnr"><br><br>
+
+        <label for="problem">Problem:</label><br>
+        <input type="text" id="Problem" name="problem"><br><br>
+        </div>
+        </div>
+
+
+
+
+        <button type="button" onclick="validateForm()">Absenden</button>
+
+        <div id="confirmationMessage" class="hidden">Gespeichert!</div>
+    </form>
+
+    
+
+    <div id="dataDisplay" class="hidden">
+        <h4>Gespeicherte Daten:</h4>
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Adresse:</strong> <span id="displayAdresse"></span></p>
+        <p><strong>Alter:</strong> <span id="displayAlter"></span></p>
+        <p><strong>Mail:</strong> <span id="displayMail"></span></p>
+        <p><strong>Telefonnr:</strong> <span id="displayTelefonnr"></span></p>
+        <p><strong>Problem:</strong> <span id="displayProblem"></span></p>
     </div>
 
-    <div id="footer">
-        <br>
-        <br>
-        <br>
-        &copy; 2025 Banken im Vergleich. Alle Rechte vorbehalten.(Nathan Abebe & Julian Wuttke)
-        <br>
-        <br>
-        <br>
-    </div>
+    
+    <div class="footer">
+		<br>
+		<br>
+		<br>
+		&copy; 2025 Banken im Vergleich. Alle Rechte vorbehalten. Julian Wuttke und Nathan Abebe
+		<br>
+		<br>
+	</div>
 </body>
 </html>
