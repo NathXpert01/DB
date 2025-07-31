@@ -1,29 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="contact.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsche Bank Landing Page</title>
+  <link rel="stylesheet" href="/index2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
-	<div>
-	    <ul id="navigation">
-		    <li><a href="index.html">Home</a></li>
-		    <li><a href="offers.html">Offers</a></li>
-		    <li><a href="collections.html">Collections</a></li>
-		    <li><a href="contact.html">Contact</a></li>
-	    </ul>
+<body data-mode="default" id="body">
+  <nav id="nav">
+    <div>Home</div>
+    <div>Angebote</div>
+    <div>Aktienkurse</div>
+    <div>Kontakt</div>
+  </nav>
+
+  <p class="hintergrund-text" id="hintergrund-titel"> BANK </p>
+
+  <div class="container">
+    <div class="left">
+      <h1 id="titel" class="titel">Deutsche Bank</h1>
+      <ul>
+        <li id="text1"><strong>Das Junge Konto</strong><br>Für Schüler, Azubis und Studenten</li>
+        <li id="text2"><strong>AktivKonto</strong><br>Aktuell beliebt</li>
+        <li id="text3"><strong>BestKonto</strong><br>Mit vielen Extras</li>
+      </ul>
+      <button class="btn">More Info</button>
     </div>
 
-    <div class="footer">
-		<br>
-		<br>
-		<br>
-		&copy; 2025 Banken im Vergleich Alle Rechte vorbehalten. Julian Wuttke und Nathan Abebe
-		<br>
-		<br>
-	</div>
-	
+    <div class="center">
+      <img src="https://www.deutsche-bank.de/dam/deutschebank/de/pgk/ub/kreditkarten-1059x755-master-card-standard-w35441-v2.png.transform/db_eccs_common_imageDesktop/image.png" alt="Bankkarte" id="cardImage">
+    </div>
+
+    <div class="right">
+      <div class="circle">
+        <div class="dot"></div>
+      </div>
+      <div class="bank-logos">
+        <img src="https://play-lh.googleusercontent.com/-sb4f5LGzQQfdhF4nnLMavUTLcavV5utTSBN9Lhvous1v67LaoYTnmy1Tz6KZ8Lk5BWa" alt="Postbank" id="postbankLogo" class="Logo">
+        <img src="https://logosmarken.com/wp-content/uploads/2021/03/Deutsche-Bank-Logo.png" alt="Deutsche Bank" id="deutschebankLogo" class="Logo">
+        <img src="https://www.schmidtisblog.de/wp-content/uploads/2022/03/Sparkasse-Logo.webp" alt="Sparkasse" id="sparkasseLogo" class="Logo">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const body = document.getElementById("body");
+    const postbankLogo = document.getElementById("postbankLogo");
+
+    postbankLogo.addEventListener("click", () => {
+        body.setAttribute("data-mode", "postbank")
+        const dot = document.querySelector(".dot");
+        dot.classList.remove("animate-dot");
+        void dot.offsetWidth;
+        dot.classList.add("animate-dot");
+        document.getElementById("text1").innerHTML = "<strong> Das flexible Konto </strong> <br> 5,90 € mtl. Grundpreis"
+        document.getElementById("text2").innerHTML = "<strong> Das Komfort-Konto </strong> <br> 0,00 € mtl. Grundpreis"
+        document.getElementById("text3").innerHTML = "<strong> Das junge Konto </strong> <br> 0,00 € mtl. Grundpreis"
+        document.getElementById("titel").innerHTML = "Postbank"
+        switchCard("https://kreditkarten.com/wp-content/uploads/2024/06/postbank-card-plus.jpg");
+    });
+
+    deutschebankLogo.addEventListener("click", () => {
+        body.setAttribute("data-mode", "deutschebank")
+        const dot = document.querySelector(".dot");
+        dot.classList.remove("animate-dot");
+        void dot.offsetWidth;
+        dot.classList.add("animate-dot");
+        document.getElementById("text1").innerHTML = "<strong>Das Junge Konto</strong><br>Für Schüler, Azubis und Studenten"
+        document.getElementById("text2").innerHTML = "<strong>AktivKonto</strong><br>Aktuell beliebt"
+        document.getElementById("text3").innerHTML = "<strong>BestKonto</strong><br>Mit vielen Extras"
+        document.getElementById("titel").innerHTML = "Deutsche Bank"
+        switchCard("https://www.deutsche-bank.de/dam/deutschebank/de/pgk/ub/kreditkarten-1059x755-master-card-standard-w35441-v2.png.transform/db_eccs_common_imageDesktop/image.png");
+    });
+
+    sparkasseLogo.addEventListener("click", () => {
+        body.setAttribute("data-mode", "sparkasse")
+        const dot = document.querySelector(".dot");
+        dot.classList.remove("animate-dot");
+        void dot.offsetWidth;
+        dot.classList.add("animate-dot");
+        document.getElementById("text1").innerHTML = "<strong>Mobiles Bankkonto</strong><br>Die Apps der Sparkasse"
+        document.getElementById("text2").innerHTML = "<strong>Online Banking</strong><br>Unabhängig von Filialzeiten"
+        document.getElementById("text3").innerHTML = "<strong>Girokonto</strong><br>20.000 Geldautomaten kostenlos abheben"
+        document.getElementById("titel").innerHTML = "Sparkasse"
+        switchCard("https://www.sparkasse-neckartal-odenwald.de/content/myif/sk-neckartal-odenwald/work/filiale/de/home/privatkunden/girokonto/sparkassencard/_jcr_content/par/section_1995/section/imagebox12_d308/image.img.jpg/1748428076267.jpg");
+    });
+
+    const cardImage = document.getElementById("cardImage");
+
+    function switchCard(newSrc) {
+        // Startet Fly-Out
+        cardImage.classList.add("fly-out");
+
+        // Nach Fly-Out die Quelle wechseln
+        setTimeout(() => {
+            cardImage.src = newSrc;
+
+            // Entfernt Fly-Out und startet Fly-In
+            cardImage.classList.remove("fly-out");
+            cardImage.classList.add("fly-in");
+
+            // Entfernt Fly-In nach Animation
+            setTimeout(() => {
+            cardImage.classList.remove("fly-in");
+            }, 500); // Zeit muss zu CSS passen
+        }, 500);
+    }
+    </script>
 </body>
 </html>
