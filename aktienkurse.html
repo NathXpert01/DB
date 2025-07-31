@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktienkurse</title>
+    <link rel="stylesheet" type="text/css" href="aktienkurse.css">
+    <script defer src="aktienkurse.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navigation">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="angebote.html">Angebote</a></div>
+        <div><a href="aktienkurse.html">Aktienkurse</a></div>
+        <div><a href="contact.html">Kontakte</a></div>
+    </div>
+
+    <form id="myForm3">
+        <div id="myForm">
+            <div class="myForm1">
+                <label for="name1">Name:</label><br>
+                <input type="text" id="name1" name="name"><br><br>
+
+                <label for="passwort1">Passwort:</label><br>
+                <input type="text" id="passwort1" name="passwort"><br><br>
+
+                <label for="einsatz1">Einsatz:</label><br>
+                <input type="number" id="einsatz1" name="einsatz"><br><br>
+
+                <button type="button" onclick="validateForm()">Absenden</button>
+            </div>
+
+            <div class="myForm2">
+                <label for="name2">Name:</label><br>
+                <input type="text" id="name2" name="name"><br><br>
+
+                <label for="passwort2">Passwort:</label><br>
+                <input type="text" id="passwort2" name="passwort"><br><br>
+
+                <label for="einsatz2">Einsatz:</label><br>
+                <input type="number" id="einsatz2" name="einsatz"><br><br>
+
+                <button type="button" onclick="validateForm()">Absenden</button>
+            </div>
+        </div>
+        <div id="confirmationMessage" class="hidden">Gespeichert!</div>
+    </form>
+
+    <div id="dataDisplay1" class="hidden">
+        <h4>Gespeicherte Daten:</h4>
+        <p><strong>Name:</strong> <span id="displayName1"></span></p>
+        <p><strong>Passwort:</strong> <span id="displayPasswort1"></span></p>
+        <p><strong>Einsatz:</strong> <span id="displayEinsatz1"></span></p>
+    </div>
+
+    <div id="dataDisplay2" class="hidden">
+        <h4>Gespeicherte Daten:</h4>
+        <p><strong>Name:</strong> <span id="displayName2"></span></p>
+        <p><strong>Passwort:</strong> <span id="displayPasswort2"></span></p>
+        <p><strong>Einsatz:</strong> <span id="displayEinsatz2"></span></p>
+    </div>
+
+
+    <div class="footer">
+        <br><br><br>
+        &copy; 2025 Banken im Vergleich. Alle Rechte vorbehalten. Julian Wuttke und Nathan Abebe
+        <br><br>
+    </div>
+</body>
+</html>

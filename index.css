@@ -29,12 +29,23 @@ html {
         color: white;
     }
 
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover{
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+    }
     nav {
       display: flex;
       justify-content: center;
       gap: 140px;
       padding: 30px;
       font-size: 18px;
+      margin-top:10px;
     }
 
     .container {
