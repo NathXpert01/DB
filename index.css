@@ -1,36 +1,281 @@
-html, body{
-	margin:0;
-	padding:0;
-	overflow-x:hidden;
-	width:100%;
-	background-color:white;
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+html {
+    overflow: hidden;
 }
 
-a{
-    color:white;
-    text-decoration: none;
-    font-family:Arial;
+    .hintergrund-text{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(0, 0, 0, 0.1);
+        font-size: 400px;
+        font-family: "Kanit", sans-serif;
+        font-weight: 800;
+    }
+
+    body {
+        font-family: "Kanit", sans-serif;
+        background: linear-gradient(to right,
+            #3C3D41 0%,
+            #001CA1 70%,
+            #181820 100%
+            );
+        color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 140px;
+      padding: 30px;
+      font-size: 18px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding: 50px;
+      margin-top: 70px;
+    }
+
+    .left {
+      flex: 1;
+      margin-left: 50px;
+    }
+
+    .left h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .left ul {
+      list-style: none;
+      line-height: 2;
+      font-size: 18px;
+    }
+
+    .left li{
+        margin-bottom: 20px;
+    }
+
+    .left .btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      background: #0033cc;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+
+      transition: 0.5s;
+    }
+
+    .left .btn:hover {
+      background: white;
+      border: #0033cc;
+      color: #0033cc;
+    }
+
+    .center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .center img {
+      width: 100%;
+      max-width: 600px;
+      transform: rotate(-15deg);
+      border-radius: 25px;
+      margin-right: 280px;
+    }
+
+    .right {
+      flex: 0.4;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+    width: 240px;
+    height: 240px;
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    right: -170px;
+    }
+
+    .dot {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* animation: moveDot 1s ease; */ /* Optional: nur für Daueranimation, sonst via Klasse */
+    }
+
+    .animate-dot {
+      animation: moveDot 1s ease;
+    }
+
+@keyframes moveDot {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
-a:hover{
-    color:grey
+    .bank-logos {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .bank-logos img {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: white;
+      padding: 9px;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    #sparkasseLogo, #postbankLogo {
+        margin-left: 70px;
+    }
+
+    .bank-logos:hover .Logo{
+        opacity: 0.2;
+    }
+
+    .bank-logos .Logo:hover{
+        opacity: 1;
+        background: linear-gradient(45deg, red, orange, yellow, 
+       green, blue, indigo, violet);
+    }
+
+
+    body[data-mode="postbank"] {
+    background: linear-gradient(to right,
+            #41413C 0%,
+            #FACE48 70%,
+            #181820 100%
+            ); 
+    }
+
+    body[data-mode="postbank"] .btn {
+    background-color: #FACE48;
+    color: white;
+    }
+
+    body[data-mode="postbank"] .left{
+    color: white;
+    }
+
+    body[data-mode="postbank"] .nav{
+    color: white;
+    }
+
+    body[data-mode="postbank"] .dot{
+    top: 8%;
+    transform: translate(-50%, -50%);
+    left: 20%;
+    }
+
+    body[data-mode="sparkasse"] {
+    background: linear-gradient(to right,
+            #41413C 0%,
+            #FF0000 70%,
+            #181820 100%
+            ); /* Postbank-Gelb */
+    }
+
+    body[data-mode="sparkasse"] .btn {
+    background-color: #FF0000;
+    color: white;
+    }
+
+    body[data-mode="sparkasse"] .left{
+    color: white;
+    }
+
+    body[data-mode="sparkasse"] .nav{
+    color: white;
+    }
+
+    body[data-mode="sparkasse"] .dot{
+    top: 90%;
+    transform: translate(-50%, -50%);
+    left: 20%;
+    }
+
+
+    .card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 480px;
+    border-radius: 16px;
+    position: absolute;
+    }
+
+    /* Flug-Animationen */
+    .fly-out {
+    opacity: 0;
+    transform: translateX(-200px) rotate(-15deg);
+    }
+
+    .fly-in {
+    opacity: 1;
+    transform: translateX(0) rotate(-15deg);
+    }
+
+    @keyframes flyOut {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-15deg) translateX(-200px) scale(0.8);
+  }
 }
 
-#navigation{						
-	list-style-type:none;
-	background-color:black;
-	position:sticky;
-	width:100%;
-	height:80px;
-	border:1px solid #1c1c1c;
-	display:flex;
-	align-items: center; 				
-	justify-content:center;
-    margin:0;
-    font-size:20px;
-    font-weight:bold;
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: rotate(15deg) translateX(200px) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-15deg) translateX(0) scale(1);
+  }
 }
 
-li{
-    margin-right:70px;
+.fly-out {
+  animation: flyOut 0.5s ease forwards;
+}
+
+.fly-in {
+  animation: flyIn 0.5s ease forwards;
 }
