@@ -3,8 +3,8 @@ function validateForm() {
     const adresse = document.getElementById("adresse").value.trim();
     const alter = document.getElementById("alter").value.trim();
     const mail = document.getElementById("mail").value.trim();
-    const telefonnr = document.getElementById("Telefonnr").value.trim(); // Großschreibung im ID beibehalten!
-    const problem = document.getElementById("Problem").value.trim();     // Großschreibung im ID beibehalten!
+    const telefonnr = document.getElementById("Telefonnr").value.trim();
+    const problem = document.getElementById("Problem").value.trim();
 
     if (name === "") {
         alert("Name muss ausgefüllt werden");
@@ -41,10 +41,8 @@ function validateForm() {
 
     const msg = document.getElementById("confirmationMessage");
     msg.classList.remove("hidden");
-    msg.classList.add("show");
 
     setTimeout(() => {
-        msg.classList.remove("show");
         msg.classList.add("hidden");
     }, 3000);
 
