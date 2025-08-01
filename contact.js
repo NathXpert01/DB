@@ -3,18 +3,18 @@ function validateForm() {
     const adresse = document.getElementById("adresse").value.trim();
     const alter = document.getElementById("alter").value.trim();
     const mail = document.getElementById("mail").value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const telefonnr = document.getElementById("Telefonnr").value.trim();
     const problem = document.getElementById("Problem").value.trim();
-
-    if (name === "") {
+    if (name == "") {
         alert("Name muss ausgefüllt werden");
         return false;
     }
-    if (adresse === "") {
+    if (adresse == "") {
         alert("Adresse muss ausgefüllt werden");
         return false;
     }
-    if (alter === "") {
+    if (alter == "") {
         alert("Alter muss ausgefüllt werden");
         return false;
     }
@@ -22,11 +22,15 @@ function validateForm() {
         alert("Alter muss eine Zahl sein");
         return false;
     }
-    if (mail === "") {
+    if (mail == "") {
         alert("Mail muss ausgefüllt werden");
         return false;
     }
-    if (telefonnr === "") {
+    if (!emailRegex.test(mail)) {
+        alert("Bitte gib eine gültige E-Mail-Adresse ein");
+        return false;
+    }
+    if (telefonnr == "") {
         alert("Telefonnr muss ausgefüllt werden");
         return false;
     }
@@ -34,7 +38,7 @@ function validateForm() {
         alert("Telefonnr muss eine Zahl sein");
         return false;
     }
-    if (problem === "") {
+    if (problem == "") {
         alert("Problem muss ausgefüllt werden");
         return false;
     }
@@ -55,5 +59,5 @@ function validateForm() {
 
     document.getElementById("dataDisplay").classList.remove("hidden");
 
-    document.getElementById("myForm").reset();
+    document.getElementById("myForm3").reset();
 }

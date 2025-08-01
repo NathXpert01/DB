@@ -2,7 +2,6 @@ html, body{
 	margin:0;
 	padding:0;
 	width:100%;
-	background-color:white;
     overflow:hidden;
 	background-image: url('/bild.png');
     background-repeat: no-repeat;
@@ -10,9 +9,9 @@ html, body{
 }
 
 a{
-        text-decoration: none;
-        color: white;
-    }
+    text-decoration: none;
+    color: white;
+}
 
 a:hover{
         background-color: white;
@@ -31,7 +30,21 @@ a:hover{
     margin-top:10px;
     }
 
+    .link-nav1, .link-nav2, .link-nav3, .link-nav4{
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        margin-right: 20px;
+    }
 
+    .link-nav1:hover, .link-nav2:hover, .link-nav3:hover, .link-nav4:hover{
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        transition:0.5s;
+        padding: 10px 30px;
+        margin-right: 0px;
+    }
 
 #myForm{
     margin-top:150px;
@@ -40,8 +53,6 @@ a:hover{
     margin-left:300px;
     column-gap:25px;
 }
-
-
 
 #myForm3{
     display: block;
@@ -86,9 +97,9 @@ button:hover {
     top: 100px;
     right: 15px;
     width: 250px;
-    background-color: #f0f0f0;
+    background-color: #def0e2;
     padding: 13px;
-    border: 1px solid #ccc;
+    border: 1px solid grey;
     border-radius: 8px;
     font-family: Arial;
     font-size: 17px;
@@ -111,7 +122,8 @@ button:hover {
 .footer{
     font-size:15px;
     position:fixed;
-    bottom: 20px;
+    bottom:0;
     left: 20px;
     color:white;
+    font-family:"Kanit", sans-serif;
 }

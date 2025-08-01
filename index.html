@@ -11,10 +11,10 @@
 </head>
 <body data-mode="default" id="body">
   <nav id="nav">
-    <div><a href="index.html">Home</a></div>
-    <div><a href="angebote.html">Angebote</a></div>
-    <div><a href="aktienkurse.html">Aktienkurse</a></div>
-    <div><a href="contact.html">Kontakte</a></div>
+    <div><a href="index.html" class="link-nav1">Home</a></div>
+    <div><a href="angebote.html" class="link-nav2">Angebote</a></div>
+    <div><a href="aktienkurse.html" class="link-nav3">Aktienkurse</a></div>
+    <div><a href="contact.html" class="link-nav4">Kontakte</a></div>
   </nav>
 
   <p class="hintergrund-text" id="hintergrund-titel"> BANK </p>
@@ -27,7 +27,7 @@
         <li id="text2"><strong>AktivKonto</strong><br>Aktuell beliebt</li>
         <li id="text3"><strong>BestKonto</strong><br>Mit vielen Extras</li>
       </ul>
-      <button class="btn">More Info</button>
+      <button class="btn"><a id="btn-link" class="btn-link" href="https://www.deutsche-bank.de/pk.html" alt="die offizielle Website der deutschen Bank" target="_blank"> More Info </a></button>
     </div>
 
     <div class="center">
@@ -60,6 +60,8 @@
         document.getElementById("text2").innerHTML = "<strong> Das Komfort-Konto </strong> <br> 0,00 € mtl. Grundpreis"
         document.getElementById("text3").innerHTML = "<strong> Das junge Konto </strong> <br> 0,00 € mtl. Grundpreis"
         document.getElementById("titel").innerHTML = "Postbank"
+        const mylink = document.getElementById("btn-link");
+        mylink.setAttribute("href", "https://www.postbank.de/");
         switchCard("https://kreditkarten.com/wp-content/uploads/2024/06/postbank-card-plus.jpg");
     });
 
@@ -73,6 +75,8 @@
         document.getElementById("text2").innerHTML = "<strong>AktivKonto</strong><br>Aktuell beliebt"
         document.getElementById("text3").innerHTML = "<strong>BestKonto</strong><br>Mit vielen Extras"
         document.getElementById("titel").innerHTML = "Deutsche Bank"
+        const mylink = document.getElementById("btn-link");
+        mylink.setAttribute("href", "https://www.deutsche-bank.de/pk.html");
         switchCard("https://www.deutsche-bank.de/dam/deutschebank/de/pgk/ub/kreditkarten-1059x755-master-card-standard-w35441-v2.png.transform/db_eccs_common_imageDesktop/image.png");
     });
 
@@ -86,29 +90,37 @@
         document.getElementById("text2").innerHTML = "<strong>Online Banking</strong><br>Unabhängig von Filialzeiten"
         document.getElementById("text3").innerHTML = "<strong>Girokonto</strong><br>20.000 Geldautomaten kostenlos abheben"
         document.getElementById("titel").innerHTML = "Sparkasse"
+        const mylink = document.getElementById("btn-link");
+        mylink.setAttribute("href", "https://www.sparkasse.de/");
         switchCard("https://www.sparkasse-neckartal-odenwald.de/content/myif/sk-neckartal-odenwald/work/filiale/de/home/privatkunden/girokonto/sparkassencard/_jcr_content/par/section_1995/section/imagebox12_d308/image.img.jpg/1748428076267.jpg");
     });
 
     const cardImage = document.getElementById("cardImage");
 
     function switchCard(newSrc) {
-        // Startet Fly-Out
         cardImage.classList.add("fly-out");
 
-        // Nach Fly-Out die Quelle wechseln
         setTimeout(() => {
             cardImage.src = newSrc;
 
-            // Entfernt Fly-Out und startet Fly-In
             cardImage.classList.remove("fly-out");
             cardImage.classList.add("fly-in");
 
-            // Entfernt Fly-In nach Animation
             setTimeout(() => {
             cardImage.classList.remove("fly-in");
-            }, 500); // Zeit muss zu CSS passen
+            }, 500);
         }, 500);
     }
     </script>
+
+  <div class="footer">
+		<br>
+		<br>
+		<br>
+		&copy; 2025 Banken im Vergleich. Alle Rechte vorbehalten. Julian Wuttke und Nathan Abebe
+		<br>
+		<br>
+	</div>
+
 </body>
 </html>

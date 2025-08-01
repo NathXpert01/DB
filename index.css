@@ -14,9 +14,10 @@ html {
         top: 50%;
         transform: translate(-50%, -50%);
         color: rgba(0, 0, 0, 0.1);
-        font-size: 400px;
+        font-size: 330px;
         font-family: "Kanit", sans-serif;
         font-weight: 800;
+        z-index:0;
     }
 
     body {
@@ -29,16 +30,22 @@ html {
         color: white;
     }
 
-    a{
+    .link-nav1, .link-nav2, .link-nav3, .link-nav4{
         text-decoration: none;
         color: white;
+        padding: 10px 20px;
+        margin-right: 20px;
     }
 
-    a:hover{
+    .link-nav1:hover, .link-nav2:hover, .link-nav3:hover, .link-nav4:hover{
         background-color: white;
         border-radius: 10px;
         color: black;
+        transition:0.5s;
+        padding: 10px 30px;
+        margin-right: 0px;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -53,7 +60,7 @@ html {
       align-items: center;
       justify-content: left;
       padding: 50px;
-      margin-top: 70px;
+      margin-top: 30px;
     }
 
     .left {
@@ -80,20 +87,41 @@ html {
       margin-top: 30px;
       padding: 15px 40px;
       background: #0033cc;
+      color:white;
       border: none;
-      color: white;
       font-weight: bold;
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
+      z-index:5;
+    }
 
-      transition: 0.5s;
+    .btn-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn:hover .btn-link {
+      color: #0033cc;
+      text-decoration: none;
+      transition:0.5s;
     }
 
     .left .btn:hover {
       background: white;
       border: #0033cc;
+      transition:0.5s;
+    }
+
+    body[data-mode="deutschebank"] .btn-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    body[data-mode="deutschebank"] .btn:hover .btn-link {
       color: #0033cc;
+      text-decoration: none;
+      transition:0.5s;
     }
 
     .center {
@@ -137,7 +165,6 @@ html {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    /* animation: moveDot 1s ease; */ /* Optional: nur für Daueranimation, sonst via Klasse */
     }
 
     .animate-dot {
@@ -183,8 +210,7 @@ html {
 
     .bank-logos .Logo:hover{
         opacity: 1;
-        background: linear-gradient(45deg, red, orange, yellow, 
-       green, blue, indigo, violet);
+        transition:0.5s;
     }
 
 
@@ -196,10 +222,28 @@ html {
             ); 
     }
 
+    body[data-mode="postbank"] .btn:hover {
+      background: white;
+      border: #FACE48;
+      color: #FACE48;
+    }
+
     body[data-mode="postbank"] .btn {
     background-color: #FACE48;
     color: white;
     }
+
+    body[data-mode="postbank"] .btn-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    body[data-mode="postbank"] .btn:hover .btn-link {
+      color: #FACE48;
+      text-decoration: none;
+      transition:0.5s;
+    }
+
 
     body[data-mode="postbank"] .left{
     color: white;
@@ -220,12 +264,27 @@ html {
             #41413C 0%,
             #FF0000 70%,
             #181820 100%
-            ); /* Postbank-Gelb */
+            ); 
     }
 
     body[data-mode="sparkasse"] .btn {
     background-color: #FF0000;
-    color: white;
+    }
+
+    body[data-mode="sparkasse"] .btn:hover {
+      background: white;
+      border: #FF0000;
+    }
+
+    body[data-mode="sparkasse"] .btn-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    body[data-mode="sparkasse"] .btn:hover .btn-link {
+      color: #FF0000;
+      text-decoration: none;
+      transition:0.5s;
     }
 
     body[data-mode="sparkasse"] .left{
@@ -250,7 +309,6 @@ html {
     position: absolute;
     }
 
-    /* Flug-Animationen */
     .fly-out {
     opacity: 0;
     transform: translateX(-200px) rotate(-15deg);
@@ -289,4 +347,12 @@ html {
 
 .fly-in {
   animation: flyIn 0.5s ease forwards;
+}
+
+.footer{
+    font-size:15px;
+    position:fixed;
+    bottom:0;
+    left: 20px;
+    color:white;
 }
